@@ -2,14 +2,15 @@ class ViewModel {
   constructor(cats) {
     this.cats = ko.observable(cats);
     this.currentCat = ko.observable(this.cats()[0]);
+    this.clickCat = () => {
+      this.currentCat({
+        ...this.currentCat(),
+        clickCount: this.currentCat().clickCount + 1
+      });
+    }
   }
 
-  clickCat() {
-    this.currentCat({
-      ...this.currentCat(),
-      clickCount: this.currentCat().clickCount + 1
-    });
-  }
+
 }
 
 const cats = [
