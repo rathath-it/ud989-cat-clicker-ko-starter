@@ -1,0 +1,18 @@
+class ViewModel {
+  constructor(cats) {
+    this.cats = ko.observable(cats);
+    this.currentCat = ko.observable(this.cats()[0]);
+  }
+
+  clickCat() {
+    this.currentCat({
+      ...this.currentCat(), clickCount: this.currentCat().clickCount + 1
+    })
+  }
+}
+
+const cats = [
+  { name: 'Tabby', imgSrc: 'img/434164568_fea0ad4013_z.jpg', clickCount: 0 }
+];
+
+ko.applyBindings(new ViewModel(cats));
