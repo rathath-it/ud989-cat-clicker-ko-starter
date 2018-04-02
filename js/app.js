@@ -6,13 +6,19 @@ class ViewModel {
 
   clickCat() {
     this.currentCat({
-      ...this.currentCat(), clickCount: this.currentCat().clickCount + 1
-    })
+      ...this.currentCat(),
+      clickCount: this.currentCat().clickCount + 1
+    });
   }
 }
 
 const cats = [
-  { name: 'Tabby', imgSrc: 'img/434164568_fea0ad4013_z.jpg', clickCount: 0 }
+  {
+    name: 'Tabby',
+    imgSrc: 'img/434164568_fea0ad4013_z.jpg',
+    clickCount: 0,
+    nickNames: ['Beta', 'Gama', 'Alpha']
+  }
 ];
 
 ko.applyBindings(new ViewModel(cats));

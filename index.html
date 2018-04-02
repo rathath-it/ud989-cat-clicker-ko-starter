@@ -10,8 +10,12 @@
 
         <h2 id="cat-name" data-bind="text: currentCat().name"></h2>
         <div id="cat-count" data-bind="text: currentCat().clickCount"></div>
-        <img id="cat-img" src="" alt="cute cat" data-bind="attr: {src: currentCat().imgSrc}, click: clickCat">
-
+        <img id="cat-img"
+             alt="cute cat"
+             data-bind="attr: { src: currentCat().imgSrc}, click: clickCat">
+        <ul data-bind="foreach: { data: currentCat().nickNames, as: 'nickname'}">
+          <li data-bind="text: nickname"></li>
+        </ul>
     </div>
     <script src="js/lib/knockout-3.2.0.js"></script>
     <script src="js/app.js"></script>
