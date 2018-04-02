@@ -13,8 +13,8 @@
         <img id="cat-img"
              alt="cute cat"
              data-bind="attr: { src: currentCat().imgSrc}, click: clickCat">
-        <ul data-bind="foreach: { data: currentCat().nickNames, as: 'nickname'}">
-          <li data-bind="text: nickname"></li>
+        <ul data-bind="foreach: currentCat().nickNames">
+          <li data-bind="text: $data"></li>
         </ul>
     </div>
     <script src="js/lib/knockout-3.2.0.js"></script>
